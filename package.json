@@ -10,9 +10,6 @@
   "author": "Andrew Lawendy",
   "license": "MIT",
   "dependencies": {
-    "babel-plugin-react-css-modules": "^5.2.6",
-    "node-sass": "^5.0.0",
-    "postcss-scss": "^3.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "semantic-ui-css": "^2.4.1",
@@ -22,6 +19,8 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.2.0",
@@ -32,8 +31,7 @@
     "husky": "^4.3.8",
     "lint-staged": "^10.5.3",
     "parcel-bundler": "^1.12.4",
-    "prettier": "^2.2.1",
-    "sass": "^1.32.5"
+    "prettier": "^2.2.1"
   },
   "browserslist": [
     "last 2 Chrome versions"
@@ -47,9 +45,20 @@
       "git add"
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
