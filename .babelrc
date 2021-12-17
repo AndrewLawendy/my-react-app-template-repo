@@ -1,12 +1,7 @@
 {
-  "presets": ["@babel/preset-react", "@babel/preset-env"],
-  "plugins": [
-    ["react-css-modules", {
-      "filetypes": {
-        ".scss": {
-          "syntax": "postcss-scss"
-        }
-      }
-    }]
+  "presets": [
+    "@babel/preset-react",
+    "@babel/preset-env",
+    "@babel/preset-typescript"
   ]
 }
